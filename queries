@@ -1,0 +1,38 @@
+SQL CRUD Operations – Supabase
+
+-------------------------------
+CREATE TABLE
+-------------------------------
+CREATE TABLE students (
+    id SERIAL PRIMARY KEY,
+    name TEXT,
+    email TEXT,
+    age INTEGER,
+    course TEXT,
+    created_at TIMESTAMP
+);
+
+-------------------------------
+INSERT DATA
+-------------------------------
+INSERT INTO students ...
+
+-------------------------------
+READ QUERIES
+-------------------------------
+SELECT * FROM students;
+SELECT * FROM students WHERE age > 20;
+SELECT name, email FROM students;
+SELECT * FROM students WHERE course = 'Computer Science';
+
+-------------------------------
+UPDATE QUERIES
+-------------------------------
+UPDATE students SET age = 23 WHERE email = 'aarav.sharma@gmail.com';
+UPDATE students SET course = 'Electrical Engineering' WHERE course = 'Electronics';
+
+-------------------------------
+DELETE QUERIES
+-------------------------------
+DELETE FROM students WHERE id = 7;
+DELETE FROM students WHERE age < 20;
