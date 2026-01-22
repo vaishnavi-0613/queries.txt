@@ -1,0 +1,47 @@
+Advanced SQL Queries – Single Table (students)
+
+-----------------------------------
+AGGREGATE QUERIES
+-----------------------------------
+
+1. Count total students
+SELECT COUNT(*) FROM students;
+(Output shown in Supabase)
+
+2. Average age
+SELECT AVG(age) FROM students;
+
+3. Min & Max age
+SELECT MIN(age), MAX(age) FROM students;
+
+4. Students per course
+SELECT course, COUNT(*) FROM students GROUP BY course;
+
+5. Students age > 20
+SELECT COUNT(*) FROM students WHERE age > 20;
+
+-----------------------------------
+GROUPING & FILTERING
+-----------------------------------
+
+6. Course-wise count
+SELECT course, COUNT(*) FROM students GROUP BY course;
+
+7. Courses with count > 1
+SELECT course, COUNT(*) FROM students GROUP BY course HAVING COUNT(*) > 1;
+
+8. Courses ordered by count desc
+SELECT course, COUNT(*) FROM students GROUP BY course ORDER BY COUNT(*) DESC;
+
+-----------------------------------
+ORDERING & LIMITING
+-----------------------------------
+
+9. Latest 3 students
+SELECT * FROM students ORDER BY created_at DESC LIMIT 3;
+
+10. Top 5 oldest students
+SELECT * FROM students ORDER BY age DESC LIMIT 5;
+
+11. Students by course sorted by age
+SELECT * FROM students WHERE course = 'Computer Science' ORDER BY age DESC;
